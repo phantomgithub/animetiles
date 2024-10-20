@@ -4,7 +4,11 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        cherry: ['Cherry Bomb One', 'system-ui'],
+      },
+    },
   },
   plugins: [],
 }

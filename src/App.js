@@ -1,34 +1,22 @@
 import React from 'react';
+import './App.css';
+import { BrowserRouter,Route,Routes } from 'react-router-dom';
+import Home from './Pages/Home.js'
+import NoPage from './Pages/NoPage.js';
+import Play from './Pages/Play.js';
 
 function App() {
-  return (
-    <div className="flex flex-col h-full items-center justify-center bg-gray-200 text-gray-700">
-      <div className="flex items-center">
-        <h1 className="text-6xl font-thin tracking-wider">Create React App + Tailwind CSS</h1>
-      </div>
-      <p className="my-6 tracking-wide">
-        Edit <code>src/App.js</code> and save to reload.
-      </p>
-      <div className="mt-6 flex justify-center">
-        <a
-          className="uppercase hover:underline"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        <a
-          className="ml-10 uppercase hover:underline"
-          href="https://tailwindcss.com"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn Tailwind
-        </a>
-      </div>
-    </div>
-  );
+return(
+  <BrowserRouter>
+  <Routes>
+    <Route index element={<Home/>}/>
+    <Route path="/play/:song" element={<Play/>}></Route>
+    <Route path="*" element={<NoPage/>}/>
+
+
+  </Routes>
+  </BrowserRouter>
+);
 }
 
 export default App;
